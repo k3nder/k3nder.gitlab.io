@@ -1,0 +1,66 @@
+.box {
+    --border-angle: 0turn; // For animation.
+    --main-bg: conic-gradient(
+        from var(--border-angle),
+        #213,
+        #112 5%,
+        #112 60%,
+        #213 95%
+      );
+    
+    border: solid 5px transparent;
+    border-radius: 2em;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+    
+    background: 
+      // padding-box clip this background in to the overall element except the border.
+      var(--main-bg) padding-box,
+      // border-box extends this background to the border space
+      var(--gradient-border) border-box, 
+      // Duplicate main background to fill in behind the gradient border. You can remove this if you want the border to extend "outside" the box background.
+      var(--main-bg) border-box;
+    
+    background-position: center center;
+  
+    animation: bg-spin 3s linear infinite;
+    @keyframes bg-spin {
+      to {
+        --border-angle: 1turn;
+      }
+    }
+  
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+  
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Posiciona el tooltip encima del elemento */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }

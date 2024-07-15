@@ -1,0 +1,45 @@
+[
+    {
+        "title": "Order algorithm visual",
+        "descriptions": {
+            "en": "Visual representation of the bubble sort algorithm.",
+            "es": "Representación visual del algoritmo de ordenación burbuja.",
+            "fr": "Représentation visuelle de l'algorithme de tri à bulles."
+        },
+        "image": "/projects/images/project1.img.png",
+        "deploy": "https://algorithm-visual-neon.vercel.app/",
+        "repo": "https://github.com/k3nder/Algorithm-visual.git",
+        "tags": [
+            {
+                "logo": "angular",
+                "svg": "-Angular-DD0031.svg"
+            },
+             {
+                "logo": "html5",
+                "color": "white",
+                "svg": "HTML5%20-%23E34F26.svg"
+             }
+        ]
+    },
+    {
+        "title": "Simple Coffee listing",
+        "descriptions": {
+            "en": "A website to order coffees, it has no backend, it is just the page.",
+            "es": "Un sitio web para pedir cafés, no tiene backend, es solo la página de cafe",
+            "fr": "Un site internet pour commander des cafés, il n'a pas de backend, c'est juste la page."
+        },
+        "image": "/projects/images/project2.img.png",
+        "deploy": "https://simple-coffe-listing-git-master-kristian-s-projects-e48fe586.vercel.app/",
+        "repo": "https://github.com/k3nder/SimpleCoffeListing",
+        "tags": [
+            {
+                "logo": "angular",
+                "svg": "-Angular-DD0031.svg"
+            }, 
+            {
+                "logo": "tailwindcss",
+                "svg": "-tailwindcss-008373.svg"
+            }
+        ]
+    }
+]

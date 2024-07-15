@@ -1,0 +1,62 @@
+---
+import Project from "./Project.astro";
+const { className, text, lenguage } = Astro.props;
+import Json from "../../../public/projects/projects.json";
+import JsonE from "../../../public/projects/extra.projects.json";
+import "../../css/global.scss"
+---
+
+<div class="flex projects">
+  <ul class="" id="projects-view">
+    {
+      Json.map((x) => {
+        return (
+          <li class="mt-4">
+            <Project text={text} project={x} lenguage={lenguage} />
+          </li>
+        );
+      })
+    }
+  </ul>
+  <div class=" rounded-md bbox w-full bg-black">
+    <!--<ul class="grid grid-cols-3 p-2">
+      {
+        JsonE.map((x => {
+          return (
+          <a class="bg-white p-2 rounded-md border border-dark-primary-800 extra" href={x.href}>
+            <div class="flex">
+              <h3 class="font-bold" >{x.title}</h3>
+              <img class="ml-auto" src="/open/dark.svg" alt="">
+            </div>
+            <p>{x.description}</p>
+          </a>
+          );
+        }))
+    }
+        
+    </ul>-->
+    <p class="text-white text-center h-text-center bg-black" >nothing here</p>
+  </div>
+</div>
+<style>
+  @import "tailwindcss/base";
+  @import "tailwindcss/components";
+  @import "tailwindcss/utilities";
+  .extra div img {
+    rotate: 40deg;
+    transition-duration: 300ms;
+    opacity: 0%;
+  }
+  .extra:hover div img{
+    opacity: 100%;
+    transform: rotate(-40deg);
+  }
+
+  .projects {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+  .h-text-center {
+    line-height: 33rem;
+  }
+</style>

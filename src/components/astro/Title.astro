@@ -1,0 +1,26 @@
+---
+interface Props {
+    title: string,
+    subtitle: string    
+}
+const {title, subtitle} = Astro.props
+---
+<div class="flex items-center justify-center h-32">
+    <ul>
+        <li><h1 class="txt title font-sans">{title}</h1></li>
+        <li><p class="subtitle txt">{subtitle}</p></li>
+    </ul>
+</div>
+<style>
+    .title {
+        font-size: 3rem;
+        align-content: center;
+        margin-top: 10px;
+        @apply md:mt-0
+    }
+    .subtitle {
+        align-content: center;
+        margin-bottom: 1rem;
+        @apply md:mb-0
+    }
+</style>

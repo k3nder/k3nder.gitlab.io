@@ -1,0 +1,55 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Title from "../../components/astro/Title.astro";
+import HeadLand from "../../components/astro/HeadLand.astro";
+import Markdown from "../../components/react/Markdown";
+import DestacTech from "../../components/astro/FeaturedTech.astro";
+import Projects from "../../components/astro/Projects.astro";
+import AcceptCookies from "../../components/react/acceptCookies/AcceptCookies";
+import { language } from "../../scripts.ts";
+---
+
+<Layout
+    title="k3nder"
+    lenguage={"es"}
+    metatexts={["Profolio de K3nder", "<contacto />"]}
+>
+    <body class="text-white">
+        <Title
+            title="K3nder Full-Stack developer🎉"
+            subtitle="Creador de esta pagina"
+        />
+        <HeadLand title="Acerca de mi" />
+        <Markdown
+            text="Hola soy *Kristian*, desde pequeño siempre me han interesado los ordenadores, yo tuve la suerte de ser uno de los afortunados que tenia uno en casa. Al principio me intereso mas la robótica pero unos años después me pareció un poco cara, luego vi que se podían hacer mas cosas como programar i comencé a aprender programación a los **9 años**."
+            className="dark:text-white flex justify-center sm:ml-0 sm:mr-1 md:ml-2 md:mr-3 lg:mr-20 lg:ml-40 xl:ml-20 xl:mr-40 mt-5 mb-5"
+        />
+        <HeadLand title="tecnologias destacadas" />
+        <p class="dark:text-white ml-10 mt-5">
+            Mis tecnoloias destacadas con las que trabajo son:
+        </p>
+        <DestacTech
+            texts={[
+                "Lenguages:",
+                "Desarollo Web:",
+                "",
+                "Aplicaciones i Herramientas:",
+                "Otras:",
+            ]}
+        />
+        <HeadLand title="Projectos" className="mt-5" />
+        <Projects
+            className=" mt-5 "
+            text="Tecnologias/leguajes usados:"
+            lenguage={language.es}
+        />
+        <AcceptCookies
+            texts={[
+                "Acepta las cookies para una mejor experiencia, estas solo guardan el tema i obtienen el lenguaje",
+                "Aceptar",
+                "Rechazar",
+            ]}
+            client:load
+        />
+    </body>
+</Layout>

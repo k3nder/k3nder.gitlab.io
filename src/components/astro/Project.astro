@@ -1,0 +1,231 @@
+---
+import PRL, {
+    CertificateMode,
+} from "../react/programingLeng/ProgramingLeng.tsx";
+import "../../css/global.scss";
+import { language } from "../../scripts.ts";
+interface project {
+    title: string;
+    repo: string;
+    deploy: string;
+    descriptions: {
+        en: string;
+        es: string;
+        fr: string;
+    };
+    tags: Array<tag>;
+    image: string;
+}
+interface tag {
+    logo: string;
+    svg: string;
+    color?: string;
+}
+
+interface Props {
+    project: project;
+    text: string;
+    lenguage: language;
+}
+
+const { project, text, lenguage } = Astro.props;
+---
+
+<!--
+<section class="project">
+  <h3 class="project-title txt">{project.title}</h3>
+  <div>
+    <img
+    class="project-image"
+    src={project.image}
+    alt="this is a image"
+  />
+  <p class="project-description txt">
+    {(lenguage == language.en ? project.descriptions.en : (lenguage == language.es ? project.descriptions.es : project.descriptions.fr))}
+  </p>
+  <p class="project-tags-title txt">{text}</p>
+  <ul class="project-tags-group">
+    {
+        project.tags.map((x) => {
+            return (
+                <PRL className="project-tags-group-item" svg={x.svg} logo={x.logo} color={x.color} certificateMode={CertificateMode.NO_EXIST}/>
+            )
+        })
+      }
+  </ul>
+  </div>
+  <div class="project-buttons-group">
+    <a href={project.deploy}><button class="project-buttons-group-item txt">deploy</button></a>
+    <a href={project.repo}><button class="project-buttons-group-item txt">Source</button></a>
+  </div>
+<section />
+-->
+<div class="pr md:flex mx-3 md:justify-center">
+    <img class="rounded-md i" src={project.image} alt="" />
+    <section class="txt">
+        <h2 class="h2 text-2xl font-bold mb-1">{project.title}</h2>
+        <p>
+            {
+                lenguage == language.en
+                    ? project.descriptions.en
+                    : lenguage == language.es
+                      ? project.descriptions.es
+                      : project.descriptions.fr
+            }
+        </p>
+        <ul class="flex mt-3">
+            {
+                project.tags.map((t) => {
+                    return (
+                        <li>
+                            <PRL
+                                tooltip={true}
+                                certificateMode={CertificateMode.NO_EXIST}
+                                svg={t.svg}
+                                logo={t.logo}
+                                color={t.color}
+                            />
+                        </li>
+                    );
+                })
+            }
+        </ul>
+        <div class="flex mt-3">
+            <a href={project.repo}
+                ><button class="flex mr-3 bt"
+                    >Code <img
+                        class="im"
+                        src="/code/code_black.svg"
+                        alt=""
+                    /></button
+                ></a
+            >
+            <a href={project.deploy}
+                ><button class="flex bt"
+                    >Live <img
+                        class="im"
+                        src="/links/link_black.svg"
+                        alt=""
+                    /></button
+                ></a
+            >
+        </div>
+    </section>
+</div>
+
+<style>
+    @import "tailwindcss/base";
+    @import "tailwindcss/components";
+    @import "tailwindcss/utilities";
+
+    .project {
+        position: relative;
+        border-width: 1px;
+        border-color: black;
+        border-radius: 0.375rem;
+        margin-bottom: 2.5rem;
+        margin-left: 0.2rem;
+        margin-right: 0.8rem;
+        width: 25.5rem;
+        height: 470px;
+        @apply md:ml-2;
+        @apply dark:border-white;
+    }
+    /*text-4xl font-bold ml-11 dark:text-white*/
+    .project-title {
+        font-size: 2.25rem;
+        line-height: 1.5rem;
+        font-weight: 700;
+        margin-left: 2.74rem;
+    }
+    /*lg:w-96 lg:h-48 float-right border border-white rounded-lg lg:mr-5 lg:ml-0 w-72 h-40 mr-3 ml-3*/
+    .project-image {
+        border-width: 3px;
+        border-color: black;
+        border-radius: 0.2rem;
+        width: 24rem;
+        height: 12rem;
+        margin: 0.75rem;
+        @apply dark:border-white;
+    }
+    /*text-base ml-14 mr-2 dark:text-white mt-2 clear-left*/
+    .project-description {
+        display: flex;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+        margin-top: 0.5rem;
+        clear: left;
+    }
+    .project-tags-title {
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+    /*flex mb-2 items-center ml-32 mt-5*/
+    .project-tags-group {
+        display: flex;
+        margin: 0.75rem;
+        justify-content: center;
+        margin-top: 0.25rem;
+        @apply flex-wrap;
+    }
+    /*md:w-7 md:h-7 lg:w-12 lg:h-12*/
+    .project-tags-group-item {
+        @screen md {
+            width: 1.75rem;
+            height: 1.75rem;
+        }
+        @screen lg {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+    .project-buttons-group {
+        position: absolute;
+        bottom: 0;
+        margin-left: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        margin-top: auto;
+    }
+    /*mr-10 dark:text-white hover:text-yellow-400 transition duration-250*/
+    .project-buttons-group-item {
+        margin-right: 2.5rem;
+        transition-duration: 250ms;
+        &:hover {
+            color: yellow;
+        }
+    }
+    .pr {
+        @screen md {
+            width: 45rem;
+        }
+    }
+    .i {
+        @apply object-contain;
+        @screen md {
+            width: 25rem;
+            margin-right: 2rem;
+        }
+    }
+    .bt {
+        transition: 300ms;
+        color: black;
+        background: white;
+        border-radius: 4px;
+        padding: 3px;
+        font-weight: bold;
+    }
+    .bt:hover {
+        color: aqua;
+    }
+    .im {
+        transition: 300ms;
+    }
+    .bt:hover img {
+        transform: rotate(30deg);
+    }
+</style>

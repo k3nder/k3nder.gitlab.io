@@ -1,0 +1,281 @@
+---
+import PRL, {
+    CertificateMode,
+} from "../react/programingLeng/ProgramingLeng.tsx";
+import "../../css/global.scss";
+const { texts } = Astro.props;
+---
+
+<section class="featured-tech">
+    <!--backend tech-->
+    <span class="featured-tech-group">
+        <p class="featured-tech-title txt">{texts[0]}</p>
+        <ul class="featured-tech-group-list">
+            <li>
+                <PRL
+                    logo="openjdk"
+                    svg="Java-ED8B00"
+                    certificateMode={CertificateMode.AAA}
+                    certificate="java.svg"
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="scala"
+                    svg="-Scala-DC322F.svg"
+                    certificateMode={CertificateMode.NONE}
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="kotlin"
+                    svg="Kotlin%20-%237f52ff"
+                    certificateMode={CertificateMode.NONE}
+                    color="white"
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="python"
+                    svg="Python%20-%2314354C.svg"
+                    certificateMode={CertificateMode.NONE}
+                    color="white"
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="rust"
+                    svg="-Rust-000000.svg"
+                    certificateMode={CertificateMode.NONE}
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="cplusplus"
+                    ,
+                    svg="-C++-blue"
+                    ,
+                    certificateMode={CertificateMode.NONE}
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="mysql"
+                    ,
+                    svg="-sql-fff.svg"
+                    ,
+                    certificateMode={CertificateMode.AAA}
+                    ,
+                    certificate="sql.svg"
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="spring"
+                    ,
+                    svg="-spring%20framework-4FC08D.svg"
+                    ,
+                    certificateMode={CertificateMode.NONE}
+                    ,
+                    color="white"
+                    client:load
+                />
+            </li>
+        </ul>
+    </span>
+    <!--others-->
+    <span class="featured-tech-group">
+        <p class="featured-tech-title txt">{texts[1]}</p>
+        <ul class="featured-tech-group-list">
+            <li>
+                <PRL
+                    logo="html5"
+                    svg="HTML5%20-%23E34F26.svg"
+                    certificateMode={CertificateMode.AAA}
+                    certificate="html.svg"
+                    color="white"
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="css3"
+                    svg="CSS%20-%231572B6.svg"
+                    certificateMode={CertificateMode.AAA}
+                    certificate="css.svg"
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="tailwindcss"
+                    svg="-tailwindcss-008373.svg"
+                    certificateMode={CertificateMode.NONE}
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="react"
+                    svg="-React-61DAFB.svg"
+                    certificateMode={CertificateMode.NONE}
+                    color="white"
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="javascript"
+                    svg="JavaScript%20-%23F7DF1E.svg"
+                    certificateMode={CertificateMode.NONE}
+                    color="white"
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="astro"
+                    svg="-astro-273347.svg"
+                    certificateMode={CertificateMode.NONE}
+                    color="white"
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="typescript"
+                    svg="-Typescript-007ACC.svg"
+                    certificateMode={CertificateMode.NONE}
+                    color="white"
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="angular"
+                    svg="-Angular-DD0031.svg"
+                    certificateMode={CertificateMode.AAA}
+                    certificate="angular.svg"
+                    color="white"
+                    client:load
+                />
+            </li>
+        </ul>
+    </span>
+    <span class="featured-tech-group">
+        <p class="featured-tech-title txt">{texts[3]}</p>
+        <ul class="featured-tech-group-list">
+            <li>
+                <PRL
+                    logo="linux"
+                    svg="Linux-FCC624"
+                    color="black"
+                    certificateMode={CertificateMode.NONE}
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="visual-studio-code"
+                    svg="Visual%20Studio%20Code-0078d7.svg"
+                    certificateMode={CertificateMode.NO_EXIST}
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="git"
+                    svg="git-%23F05033.svg"
+                    certificateMode={CertificateMode.AAA}
+                    certificate="git.svg"
+                    color="white"
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="github"
+                    svg="github-%23121011.svg"
+                    certificateMode={CertificateMode.NO_EXIST}
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="docker"
+                    svg="-Docker-1488C6.svg"
+                    certificateMode={CertificateMode.NONE}
+                    color="white"
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="powershell"
+                    svg="-Powershell-5391FE.svg"
+                    color="white"
+                    certificateMode={CertificateMode.NONE}
+                    client:load
+                />
+            </li>
+        </ul>
+    </span>
+    <span class="featured-tech-group">
+        <p class="featured-tech-title txt">{texts[4]}</p>
+        <ul class="featured-tech-group-list">
+            <li>
+                <PRL
+                    logo="gnu-bash"
+                    svg="Terminal-%23054020"
+                    color="white"
+                    certificateMode={CertificateMode.NO_EXIST}
+                    client:load
+                />
+            </li>
+            <li>
+                <PRL
+                    logo="markdown"
+                    svg="markdown-%23000000.svg"
+                    certificateMode={CertificateMode.NO_EXIST}
+                    color="white"
+                    client:load
+                />
+            </li>
+        </ul>
+    </span>
+</section>
+<br />
+<style>
+    @import "tailwindcss/base";
+    @import "tailwindcss/components";
+    @import "tailwindcss/utilities";
+
+    .featured-tech {
+        margin-left: 0.5rem;
+        @apply md:ml-4;
+    }
+    .featured-tech-group {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        @apply sm:ml-0;
+        @apply lg:ml-10;
+    }
+    .featured-tech-group-list {
+        margin-left: 0;
+        display: flex;
+        @apply sm:ml-0;
+        @apply md:ml-5;
+        @apply lg:ml-10;
+        @apply flex-wrap;
+    }
+    .featured-tech-title {
+        margin-right: 0;
+        margin-left: 0;
+    }
+</style>

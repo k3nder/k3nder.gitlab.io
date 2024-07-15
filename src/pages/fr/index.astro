@@ -1,0 +1,55 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Title from "../../components/astro/Title.astro";
+import HeadLand from "../../components/astro/HeadLand.astro";
+import Markdown from "../../components/react/Markdown";
+import DestacTech from "../../components/astro/FeaturedTech.astro";
+import Projects from "../../components/astro/Projects.astro";
+import AcceptCookies from "../../components/react/acceptCookies/AcceptCookies";
+import { language } from "../../scripts.ts";
+---
+
+<Layout
+    title="k3nder"
+    lenguage={"fr"}
+    metatexts={["Profil K3nder", "< contact />"]}
+>
+    <body class="text-white">
+        <Title
+            title="Développeur K3nder Full-Stack🎉"
+            subtitle="Créateur de cette page"
+        />
+        <HeadLand title="Sur moi" />
+        <Markdown
+            text="Bonjour, je m'appelle *Kristian*, depuis que je suis petit j'ai toujours été intéressé par les ordinateurs, j'ai eu la chance de faire partie des chanceux qui en avaient un à la maison. Au début j'étais plus intéressé par la robotique mais quelques années plus tard j'ai trouvé ça un peu cher, puis j'ai vu qu'on pouvait faire plus de choses comme la programmation et j'ai commencé à apprendre la programmation à **9 ans**."
+            className="dark:text-white flex justify-center sm:ml-0 sm:mr-1 md:ml-2 md:mr-3 lg:mr-20 lg:ml-40 xl:ml-20 xl:mr-40 mt-5 mb-5"
+        />
+        <HeadLand title="technologies en vedette" />
+        <p class="dark:text-white ml-10 mt-5">
+            Mes technologies notables avec lesquelles je travaille sont :
+        </p>
+        <DestacTech
+            texts={[
+                "langages de programmation:",
+                "Développement web:",
+                "Services d'hébergement:",
+                "Applications et outils:",
+                "Autres:",
+            ]}
+        />
+        <HeadLand title="Projets" className="mt-5" />
+        <Projects
+            className=" mt-5 "
+            text="Technologies/langages utilisés:"
+            lenguage={language.fr}
+        />
+        <AcceptCookies
+            texts={[
+                "Acceptez les cookies pour une meilleure expérience, ils enregistrent uniquement le thème et obtiennent la langue",
+                "Accepter",
+                "Déclin",
+            ]}
+            client:load
+        />
+    </body>
+</Layout>

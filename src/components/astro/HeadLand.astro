@@ -1,0 +1,23 @@
+---
+interface Props {
+    title: string,
+    className?: string
+}
+const {title, className} = Astro.props  
+---
+<section class="land">
+    <p class="text-center">{title}</p>
+</section>
+<style>
+      @import "tailwindcss/base";
+      @import "tailwindcss/components";
+      @import "tailwindcss/utilities";
+
+     .land {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @apply bg-dark-secondary-200;
+        @apply dark:bg-white;
+     }
+</style>

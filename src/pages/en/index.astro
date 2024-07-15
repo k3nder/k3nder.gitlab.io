@@ -1,0 +1,55 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Title from "../../components/astro/Title.astro";
+import HeadLand from "../../components/astro/HeadLand.astro";
+import Markdown from "../../components/react/Markdown";
+import DestacTech from "../../components/astro/FeaturedTech.astro";
+import Projects from "../../components/astro/Projects.astro";
+import AcceptCookies from "../../components/react/acceptCookies/AcceptCookies";
+import { language } from "../../scripts.ts";
+---
+
+<Layout
+    title="k3nder"
+    lenguage={"en"}
+    metatexts={["k3nder portfolio", "< contact />"]}
+>
+    <body class="text-white">
+        <Title
+            title="K3nder Full-Stack developer🎉"
+            subtitle="Creator of This Page"
+        />
+        <HeadLand title="About me" />
+        <Markdown
+            text="Hello, I'm *Kristian*, since I was little I have always been interested in computers, I was lucky enough to be one of the lucky ones who had one at home. At first I was more interested in robotics but a few years later I found it a bit expensive, then I saw that more things could be done like programming and I started learning programming at **9 years old**."
+            className="dark:text-white flex justify-center sm:ml-0 sm:mr-1 md:ml-2 md:mr-3 lg:mr-20 lg:ml-40 xl:ml-20 xl:mr-40 mt-5 mb-5"
+        />
+        <HeadLand title="Featured technologies" />
+        <p class="dark:text-white ml-10 mt-5">
+            My notable technologies that I work with are:
+        </p>
+        <DestacTech
+            texts={[
+                "Programming languages:",
+                "Front-End Development:",
+                "Cloud Hosting:",
+                "Softwares and tools:",
+                "Others:",
+            ]}
+        />
+        <HeadLand title="Projects" className="mt-5" />
+        <Projects
+            className=" mt-5 "
+            text="technologies/languages ​​used: "
+            lenguage={language.en}
+        />
+        <AcceptCookies
+            texts={[
+                "Accept cookies for a better experience, they only save the theme and obtain the language",
+                "Accept",
+                "Decline",
+            ]}
+            client:load
+        />
+    </body>
+</Layout>

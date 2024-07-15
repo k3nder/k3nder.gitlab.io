@@ -1,0 +1,52 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import SocialHeaderLink from "../react/SocialHeaderLink.tsx";
+import Logo from "./Logo.astro";
+import ThemeSwitch from "../react/ThemeSwitch.tsx"
+import LanguageSelector from "../react/LanguageSelector.tsx";
+const {actualLenguage, ContactText} = Astro.props
+---
+
+<header
+  class="header"
+>
+  <Logo />
+  <ul class="header-links">
+    <!--<li><HeaderLink to="/contact" displays={ContactText} /></li>-->
+  </ul>
+  <ul class="flex ml-auto">
+    <li class="mr-4 mt-3 p-0">
+      <ThemeSwitch client:load />
+    </li>
+    <li class="mr-4 mt-3 p-0">
+      <LanguageSelector actual={actualLenguage} client:load />
+    </li>
+    <li>
+      <SocialHeaderLink
+        socialResourceImage="/github/github-mark-white.svg"
+        socialResourceImageDark="/github/github-mark.svg"
+        socialResourceLink="https://github.com/k3nder" client:load
+      />
+    </li>
+  </ul>
+</header>
+<style>
+  @import "tailwindcss/base";
+  @import "tailwindcss/components";
+  @import "tailwindcss/utilities";
+  .header {
+    border-width: 1px;
+    display: flex;
+    height: 3.5rem;
+  }
+  .header-links {
+    margin-top: 0.75rem;
+    margin-left: 1rem;
+    padding: 0;
+    display: flex;
+    @screen md {
+      margin-left: 2.5rem;
+    }
+  }
+
+</style>
