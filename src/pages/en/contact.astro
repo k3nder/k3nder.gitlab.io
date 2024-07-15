@@ -1,8 +1,16 @@
 ---
-import Layout from "../../layouts/Layout.astro"
-import Title from "../../components/astro/Title.astro"
+import Layout from "../../layouts/Layout.astro";
+import Title from "../../components/astro/Title.astro";
 import { language } from "../../scripts.ts";
 ---
-<Layout title="k3nder | contact" lenguage={language.en} metatexts={["K3nder page contact", "< contact />"]} >
-    <Title title="Puedes mandar un corro a: " subtitle="no tardare en responder" />
+
+<Layout
+    title="k3nder | contact"
+    lenguage={"en"}
+    metatexts={["K3nder page contact", "< contact />"]}
+>
+    <Title
+        title="Puedes mandar un corro a: "
+        subtitle="no tardare en responder"
+    />
 </Layout>
