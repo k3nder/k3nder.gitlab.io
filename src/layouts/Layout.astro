@@ -1,15 +1,14 @@
 ---
 import Header from "../components/astro/Header.astro";
-import Footer from "../components/astro/Footer.astro";
+////import Footer from "../components/astro/Footer.astro";
 import { Language, languageToString } from "../scripts.ts";
 import "./Layout.css";
 interface Props {
     title: string;
-    encoding?: string;
     metatexts: string[];
     lang: Language;
 }
-const { title, lang, encoding = "UTF-8", metatexts } = Astro.props;
+const { title, lang, metatexts } = Astro.props;
 ---
 
 <!doctype html>
