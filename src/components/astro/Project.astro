@@ -3,7 +3,7 @@ import PRL, {
     CertificateMode,
 } from "../react/programingLeng/ProgramingLeng.tsx";
 import "../../css/global.scss";
-import { language } from "../../scripts.ts";
+import { Language } from "../../scripts.ts";
 interface project {
     title: string;
     repo: string;
@@ -25,7 +25,7 @@ interface tag {
 interface Props {
     project: project;
     text: string;
-    lenguage: language;
+    lenguage: Lenguage;
 }
 
 const { project, text, lenguage } = Astro.props;
@@ -66,9 +66,9 @@ const { project, text, lenguage } = Astro.props;
         <h2 class="h2 text-2xl font-bold mb-1">{project.title}</h2>
         <p>
             {
-                lenguage == language.en
+                lenguage == Language.en
                     ? project.descriptions.en
-                    : lenguage == language.es
+                    : lenguage == Language.es
                       ? project.descriptions.es
                       : project.descriptions.fr
             }
@@ -92,7 +92,7 @@ const { project, text, lenguage } = Astro.props;
         </ul>
         <div class="flex mt-3">
             <a href={project.repo}
-                ><button class="flex mr-3 bt"
+                ><button class="flex bt"
                     >Code <img
                         class="im"
                         src="/code/code_black.svg"
@@ -101,7 +101,7 @@ const { project, text, lenguage } = Astro.props;
                 ></a
             >
             <a href={project.deploy}
-                ><button class="flex bt"
+                ><button class="flex ml-3 bt"
                     >Live <img
                         class="im"
                         src="/links/link_black.svg"

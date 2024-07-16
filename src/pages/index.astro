@@ -1,23 +1,30 @@
 ---
 
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="A k3nder page" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
             import { getCookie } from "../cookies";
             const navleng = navigator.language.substring(0, 2);
-            console.log(navleng)
+            console.log(navleng);
             const noparse = getCookie("k3nder.lang");
-            console.log((navleng !== "fr" && navleng !== "es"))
-            const leng = noparse === "undefined" ? ((navleng !== "fr" && navleng !== "en" && navleng !== "es") ? "en" : (navleng)) : noparse;
+            console.log(navleng !== "fr" && navleng !== "es");
+            const leng =
+                noparse === "undefined"
+                    ? navleng !== "fr" && navleng !== "en" && navleng !== "es"
+                        ? "en"
+                        : navleng
+                    : noparse;
             console.log(leng);
-            window.location.replace(`/${leng}/`)
-    </script>
-</body>
+            window.location.replace(`/${leng}/`);
+        </script>
+    </body>
 </html>
