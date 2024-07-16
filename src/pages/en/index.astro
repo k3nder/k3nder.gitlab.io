@@ -6,12 +6,12 @@ import Markdown from "../../components/react/Markdown";
 import DestacTech from "../../components/astro/FeaturedTech.astro";
 import Projects from "../../components/astro/Projects.astro";
 import AcceptCookies from "../../components/react/acceptCookies/AcceptCookies";
-import { language } from "../../scripts.ts";
+import { Language } from "../../scripts.ts";
 ---
 
 <Layout
     title="k3nder"
-    lenguage={"en"}
+    lang={Language.en}
     metatexts={["k3nder portfolio", "< contact />"]}
 >
     <body class="text-white">
@@ -41,7 +41,7 @@ import { language } from "../../scripts.ts";
         <Projects
             className=" mt-5 "
             text="technologies/languages ​​used: "
-            lenguage={language.en}
+            lenguage={Language.en}
         />
         <AcceptCookies
             texts={[
